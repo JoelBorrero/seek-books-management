@@ -67,6 +67,12 @@ def book_detail(request: Request, id: str) -> Response:
 def book_average_price(request: Request, year: int) -> Response:
     """
     Get the average price of books published in a given year.
+
+    Args:
+        year: The year to get the average price for.
+
+    Returns:
+        A dictionary with the year, count of books, and average price for the given year.
     """
     response = {"year": year, "count": 0, "average_price": 0}
 
