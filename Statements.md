@@ -24,7 +24,7 @@ Desarrollar el backend de una aplicación que gestiona información de libros ut
   - [x] `price`
 - [x] Configura una API REST para realizar operaciones CRUD en el modelo `Book`.
 - [ ] Implementa un endpoint adicional que utilice un aggregation pipeline de MongoDB para obtener el precio promedio de los libros publicados en un año específico.
-- [ ] Proporciona datos de prueba iniciales para al menos 5 libros utilizando un script de migración para la BD (podrías usar un ORM de Django para esto).
+- [x] Proporciona datos de prueba iniciales para al menos 5 libros utilizando un script de migración para la BD (podrías usar un ORM de Django para esto).
 
 ---
 

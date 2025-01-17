@@ -1,4 +1,4 @@
 .env
-setup/*
+setup/mongo/
 **/__pycache__
 **/migrations/0*

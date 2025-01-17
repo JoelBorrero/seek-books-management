@@ -1,0 +1,122 @@
+[
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "published_year": 1937,
+    "price": 14.99,
+    "genre": "f",
+    "pages": 310
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "published_year": 1949,
+    "price": 12.99,
+    "genre": "sf",
+    "pages": 328
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "published_year": 1813,
+    "price": 9.99,
+    "genre": "r",
+    "pages": 279
+  },
+  {
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "published_year": 1897,
+    "price": 8.99,
+    "genre": "h",
+    "pages": 418
+  },
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "published_year": 1965,
+    "price": 15.99,
+    "genre": "sf",
+    "pages": 412
+  },
+  {
+    "title": "The Adventures of Tom Sawyer",
+    "author": "Mark Twain",
+    "published_year": 1876,
+    "price": 7.99,
+    "genre": "a",
+    "pages": 274
+  },
+  {
+    "title": "The Shining",
+    "author": "Stephen King",
+    "published_year": 1977,
+    "price": 10.99,
+    "genre": "h",
+    "pages": 447
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "published_year": 1925,
+    "price": 10.99,
+    "genre": "r",
+    "pages": 180
+  },
+  {
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "published_year": 2007,
+    "price": 18.99,
+    "genre": "f",
+    "pages": 662
+  },
+  {
+    "title": "Journey to the Center of the Earth",
+    "author": "Jules Verne",
+    "published_year": 1864,
+    "price": 11.99,
+    "genre": "a",
+    "pages": 183
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "published_year": 1967,
+    "price": 16.99,
+    "genre": "f",
+    "pages": 417
+  },
+  {
+    "title": "Love in the Time of Cholera",
+    "author": "Gabriel García Márquez",
+    "published_year": 1985,
+    "price": 14.99,
+    "genre": "r",
+    "pages": 348
+  },
+  {
+    "title": "The Sound of Things Falling",
+    "author": "Juan Gabriel Vásquez",
+    "published_year": 2011,
+    "price": 13.99,
+    "genre": "r",
+    "pages": 272
+  },
+  {
+    "title": "Delirium",
+    "author": "Laura Restrepo",
+    "published_year": 2007,
+    "price": 12.99,
+    "genre": "r",
+    "pages": 391
+  },
+  {
+    "title": "The Kingdom of this World",
+    "author": "Alejo Carpentier",
+    "published_year": 2007,
+    "price": 11.99,
+    "genre": "f",
+    "pages": 192
+  }
+]
