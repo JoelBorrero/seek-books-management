@@ -71,6 +71,9 @@ class QuerySet:
         self.collection.update_one({"_id": ObjectId(id)}, {"$set": data})
         return self.model_class._from_db(self.collection.find_one({"_id": ObjectId(id)}))
 
+    def aggregate(self, pipeline: list[dict]) -> Query:
+        return QuerySet.Query(self.collection.aggregate(pipeline))
+
 
 class BaseModel:
     _id: str = None

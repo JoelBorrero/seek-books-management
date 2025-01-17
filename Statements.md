@@ -23,7 +23,7 @@ Desarrollar el backend de una aplicación que gestiona información de libros ut
   - [x] `genre`
   - [x] `price`
 - [x] Configura una API REST para realizar operaciones CRUD en el modelo `Book`.
-- [ ] Implementa un endpoint adicional que utilice un aggregation pipeline de MongoDB para obtener el precio promedio de los libros publicados en un año específico.
+- [x] Implementa un endpoint adicional que utilice un aggregation pipeline de MongoDB para obtener el precio promedio de los libros publicados en un año específico.
 - [x] Proporciona datos de prueba iniciales para al menos 5 libros utilizando un script de migración para la BD (podrías usar un ORM de Django para esto).
 
 ---
@@ -41,7 +41,7 @@ Desarrollar el backend de una aplicación que gestiona información de libros ut
 
 - [ ] Incluye **instrucciones claras** sobre cómo configurar y ejecutar la aplicación.
 - [ ] Asegúrate de que el código sea legible y siga las mejores prácticas de desarrollo.
-- [ ] Valora la implementación correcta de los **pipelines de agregación de MongoDB**.
+- [x] Valora la implementación correcta de los **pipelines de agregación de MongoDB**.
 - [ ] Considera la **modularidad** y **reutilización del código**.
 - [ ] Proporciona **comentarios** en el código donde sea necesario.
 
