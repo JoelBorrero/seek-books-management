@@ -1,0 +1,1053 @@
+{
+	"info": {
+		"_postman_id": "d4d3e7bf-3a53-45d6-a012-d255dd95bc21",
+		"name": "Seek books management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34701086",
+		"_collection_link": "https://planetary-water-294947.postman.co/workspace/Team-Workspace~5ea17d12-247e-46db-8fbe-4b7a91a261f6/collection/34701086-d4d3e7bf-3a53-45d6-a012-d255dd95bc21?action=share&source=collection_link&creator=34701086"
+	},
+	"item": [
+		{
+			"name": "Create book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code == 201) {",
+							"    let response = pm.response.json();",
+							"    pm.environment.set(\"book_id\", response._id)",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Cien años de soledad\",\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 16.99,\n    \"genre\": \"f\",\n    \"pages\": 417\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/api/books/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"books",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Cien años de soledad\",\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 16.99,\n    \"genre\": \"f\",\n    \"pages\": 417\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/books/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 22:14:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "274"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"678ad63b68d2bd4c1f2d5429\",\n    \"title\": \"Cien años de soledad\",\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 16.99,\n    \"pages\": 417,\n    \"genre\": \"f\",\n    \"created_at\": \"2025-01-17T22:14:19.110195Z\",\n    \"updated_at\": \"2025-01-17T22:14:19.110186Z\",\n    \"genre_display\": \"Fantasy\"\n}"
+				},
+				{
+					"name": "400 - No title",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 16.99,\n    \"genre\": \"f\",\n    \"pages\": 417\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/books/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:16:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": [\n        \"This field is required.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get a book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/books/{{book_id}}/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"{{book_id}}",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/books/{{book_id}}/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"{{book_id}}",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:19:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "274"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"678ac94c68d2bd4c1f2d542f\",\n    \"title\": \"Cien años de soledad\",\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 16.99,\n    \"pages\": 417,\n    \"genre\": \"f\",\n    \"created_at\": \"2025-01-17T21:19:08.945000Z\",\n    \"updated_at\": \"2025-01-17T21:19:08.945000Z\",\n    \"genre_display\": \"Fantasy\"\n}"
+				},
+				{
+					"name": "404 - Wrong id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/books/ffffffffffffffffffffffff/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"ffffffffffffffffffffffff",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:22:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "List books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();",
+							"const results = response.results",
+							"if (results) {",
+							"    pm.environment.set(\"book_id\", results[0]._id)",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/books/?page=1",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"books",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/books/?page=1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 22:06:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1551"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 15,\n    \"next\": \"http://localhost:3000/api/books/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"_id\": \"678ad436c209aaac351b7dc5\",\n            \"title\": \"The Hobbit\",\n            \"author\": \"J.R.R. Tolkien\",\n            \"published_year\": 1937,\n            \"price\": 14.99,\n            \"genre\": \"f\",\n            \"pages\": 310\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dc6\",\n            \"title\": \"1984\",\n            \"author\": \"George Orwell\",\n            \"published_year\": 1949,\n            \"price\": 12.99,\n            \"genre\": \"sf\",\n            \"pages\": 328\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dc7\",\n            \"title\": \"Pride and Prejudice\",\n            \"author\": \"Jane Austen\",\n            \"published_year\": 1813,\n            \"price\": 9.99,\n            \"genre\": \"r\",\n            \"pages\": 279\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dc8\",\n            \"title\": \"Dracula\",\n            \"author\": \"Bram Stoker\",\n            \"published_year\": 1897,\n            \"price\": 8.99,\n            \"genre\": \"h\",\n            \"pages\": 418\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dc9\",\n            \"title\": \"Dune\",\n            \"author\": \"Frank Herbert\",\n            \"published_year\": 1965,\n            \"price\": 15.99,\n            \"genre\": \"sf\",\n            \"pages\": 412\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dca\",\n            \"title\": \"The Adventures of Tom Sawyer\",\n            \"author\": \"Mark Twain\",\n            \"published_year\": 1876,\n            \"price\": 7.99,\n            \"genre\": \"a\",\n            \"pages\": 274\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dcb\",\n            \"title\": \"The Shining\",\n            \"author\": \"Stephen King\",\n            \"published_year\": 1977,\n            \"price\": 10.99,\n            \"genre\": \"h\",\n            \"pages\": 447\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dcc\",\n            \"title\": \"The Great Gatsby\",\n            \"author\": \"F. Scott Fitzgerald\",\n            \"published_year\": 1925,\n            \"price\": 10.99,\n            \"genre\": \"r\",\n            \"pages\": 180\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dcd\",\n            \"title\": \"The Name of the Wind\",\n            \"author\": \"Patrick Rothfuss\",\n            \"published_year\": 2007,\n            \"price\": 18.99,\n            \"genre\": \"f\",\n            \"pages\": 662\n        },\n        {\n            \"_id\": \"678ad436c209aaac351b7dce\",\n            \"title\": \"Journey to the Center of the Earth\",\n            \"author\": \"Jules Verne\",\n            \"published_year\": 1864,\n            \"price\": 11.99,\n            \"genre\": \"a\",\n            \"pages\": 183\n        }\n    ]\n}"
+				},
+				{
+					"name": "200 - Empty",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/books/?page=1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 22:04:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 0,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code == 204) {",
+							"    pm.environment.unset(\"book_id\")",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/books/ffffffffffffffffffffffff/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"ffffffffffffffffffffffff",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/books/{{book_id}}/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"{{book_id}}",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:25:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "404 - Wrong id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/books/ffffffffffffffffffffffff/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"ffffffffffffffffffffffff",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:26:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Update a book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Cien años de soledad\",\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 26.99,\n    \"genre\": \"f\",\n    \"pages\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/api/books/{{book_id}}/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"{{book_id}}",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Cien años de soledad\",\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 26.99,\n    \"genre\": \"f\",\n    \"pages\": 500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/books/{{book_id}}/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"{{book_id}}",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:28:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "224"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"678acb2068d2bd4c1f2d5431\",\n    \"title\": \"Cien años de soledad\",\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 26.99,\n    \"pages\": 500,\n    \"genre\": \"f\",\n    \"created_at\": null,\n    \"updated_at\": null,\n    \"genre_display\": \"Fantasy\"\n}"
+				},
+				{
+					"name": "404 - Wrong id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Cien años de soledad\",\n    \"author\": \"Gabriel García Márquez\",\n    \"published_year\": 1967,\n    \"price\": 26.99,\n    \"genre\": \"f\",\n    \"pages\": 500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/books/ffffffffffffffffffffffff/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"ffffffffffffffffffffffff",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:30:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, DELETE, GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get average price for a year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/books/average-price/2007",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"average-price",
+						"2007"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/books/average-price/2007",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"average-price",
+								"2007"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:31:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"year\": \"2007\",\n    \"count\": 3,\n    \"average_price\": 14.656666666666666\n}"
+				},
+				{
+					"name": "200 - No records",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/books/average-price/2000",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"average-price",
+								"2000"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 21:31:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, origin, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"year\": \"2000\",\n    \"count\": 0,\n    \"average_price\": 0\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

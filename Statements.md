@@ -58,6 +58,6 @@ El reto debe ser entregado máximo **48 horas** luego de haber recibido el reto 
 - [ ] Repositorio de **GitHub** con el código fuente.
 - [ ] URL de la API desplegada en **Amazon Web Services (AWS)** (o en **Azure** o **GCP**) usando los servicios en su capa free.
 - [x] Documentación de los **endpoints** en **Swagger**.
-- [ ] Una colección en **Postman** con las llamadas a cada una de las APIs, incluyendo un par de casos ya grabados:
-  - [ ] Uno con **HTTP Status 200** (exitoso).
-  - [ ] Uno con **HTTP Status 500** (para caso de error) por cada endpoint.
+- [x] Una colección en **Postman** con las llamadas a cada una de las APIs, incluyendo un par de casos ya grabados:
+  - [x] Uno con **HTTP Status 200** (exitoso).
+  - [x] Uno con **HTTP Status 500** (para caso de error) por cada endpoint.
