@@ -1,0 +1,4 @@
+.env
+setup/*
+**/__pycache__
+**/migrations/0*

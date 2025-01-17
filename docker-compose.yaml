@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: app-seek
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:80"
+    volumes:
+      - .:/app
+    env_file: .env
+    depends_on:
+      - database
+    networks:
+      - internal-net
+  database:
+    container_name: database-seek
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./setup/mongo:/data/db
+    env_file:
+      - .env
+    networks:
+      - internal-net
+
+networks:
+  internal-net:
