@@ -67,8 +67,9 @@ class QuerySet:
         return self.model_class._from_db(data)
 
     def update(self, id: str, data: dict) -> "BaseModel":
-        self.collection.replace_one(ObjectId(id), data, upsert=True)
-        return self.model_class._from_db(data)
+        del data["_id"]
+        self.collection.update_one({"_id": ObjectId(id)}, {"$set": data})
+        return self.model_class._from_db(self.collection.find_one({"_id": ObjectId(id)}))
 
 
 class BaseModel:

@@ -16,13 +16,13 @@ Desarrollar el backend de una aplicación que gestiona información de libros ut
 ## Requerimientos:
 
 - [x] Utiliza el paquete `pymongo` para la integración con MongoDB.
-- [ ] Crea un modelo `Book` con al menos los siguientes campos:
-  - [ ] `title`
-  - [ ] `author`
-  - [ ] `published_date`
-  - [ ] `genre`
-  - [ ] `price`
-- [ ] Configura una API REST para realizar operaciones CRUD en el modelo `Book`.
+- [x] Crea un modelo `Book` con al menos los siguientes campos:
+  - [x] `title`
+  - [x] `author`
+  - [x] `published_date`
+  - [x] `genre`
+  - [x] `price`
+- [x] Configura una API REST para realizar operaciones CRUD en el modelo `Book`.
 - [ ] Implementa un endpoint adicional que utilice un aggregation pipeline de MongoDB para obtener el precio promedio de los libros publicados en un año específico.
 - [ ] Proporciona datos de prueba iniciales para al menos 5 libros utilizando un script de migración para la BD (podrías usar un ORM de Django para esto).
 
@@ -31,8 +31,8 @@ Desarrollar el backend de una aplicación que gestiona información de libros ut
 ## Puntos adicionales:
 
 - [ ] Implementa autenticación de usuarios utilizando **Token Authentication** y proteger las APIs con este token.
-- [ ] Agregar paginación a la API REST.
-- [ ] Utiliza **serializers personalizados** para la representación de datos.
+- [x] Agregar paginación a la API REST.
+- [x] Utiliza **serializers personalizados** para la representación de datos.
 - [ ] Implementar **pruebas unitarias** para al menos dos funciones clave.
 
 ---
