@@ -15,7 +15,7 @@ Desarrollar el backend de una aplicación que gestiona información de libros ut
 
 ## Requerimientos:
 
-- [ ] Utiliza el paquete `pymongo` para la integración con MongoDB.
+- [x] Utiliza el paquete `pymongo` para la integración con MongoDB.
 - [ ] Crea un modelo `Book` con al menos los siguientes campos:
   - [ ] `title`
   - [ ] `author`

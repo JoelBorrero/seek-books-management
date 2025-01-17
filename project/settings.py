@@ -82,6 +82,15 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# Pure pymongo
+from pymongo import MongoClient
+
+db_client = MongoClient(
+    host="database",  # docker-compose.yaml
+    port=27017,
+    username=os.getenv("MONGO_INITDB_ROOT_USERNAME"),
+    password=os.getenv("MONGO_INITDB_ROOT_PASSWORD"),
+)
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
